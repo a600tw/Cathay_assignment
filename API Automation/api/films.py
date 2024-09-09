@@ -1,38 +1,53 @@
-from ..common.configurations import SWAPI
+from common.configurations import SWAPI
+import requests
 
 
-class FilmsAPI(BaseAPI):
+# BASE_URL = "https://swapi.dev/api/films/"
+class FilmsAPI():
 
-    BASE_URL = urljoin(SWAPI.API_Path, "films/")
+    BASE_URL = SWAPI.API_Path + "/films/"
 
-    # LIST = "List"
+    # def __init__(self, response_time=None):
+    #     self.request = Request(response_time)
 
-    def get_films(self):
+    def get_films(self, append:str=None):
         '''
         '''
+        if append != None:
+            URL = self.BASE_URL + append
+        else:
+            URL = self.BASE_URL
+        response = requests.get(URL)
+        print(f"Status: {response.status_code}")
+        print(f"Response Body: {response.json()}")
+        return response
     
+    def patch_films(self, append:str=None):
+        '''
+        '''
+        if append != None:
+            URL = self.BASE_URL + append
+        else:
+            URL = self.BASE_URL
+        response = requests.patch(URL)
+        print(f"Status: {response.status_code}")
+        print(f"Response Body: {response.json()}")
+        return response
 
     def get_films_by_id(self, id: int):
         '''
         '''
-
-
-    def ad_list(self, authenticate: str, placement_id: list):
-        """4.15廣告版位內容
-
-        Args:
-            Authenticate (str):  JKOS Token
-            PlacementID (str): 廣告 ID, Null or 空陣列全部回傳
-        """
-        headers = {
-            'Authenticate': authenticate
-        }
-        body = {
-            'PlacementID': placement_id
-        }
-        return self._send_request(
-            method='POST',
-            url=urljoin(self.BASE_URL, self.LIST),
-            headers=headers,
-            json=body
-        )
+        ID_URL = self.BASE_URL+f"{id}/"
+        response = requests.get(ID_URL)
+        print(f"Status: {response.status_code}")
+        print(f"Response Body: {response.json()}")
+        return response
+    
+    def delete_films_by_id(self, id: int):
+        '''
+        '''
+        ID_URL = self.BASE_URL+f"{id}/"
+        response = requests.delete(ID_URL)
+        print(f"Status: {response.status_code}")
+        print(f"Response Body: {response.json()}")
+        return response
