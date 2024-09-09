@@ -1,0 +1,1 @@
+{"total":3,"items":[{"uid":"82057aa266e3064407a45465ed6f7426","name":"test_films_id","statistic":{"failed":0,"broken":1,"skipped":0,"passed":9,"unknown":0,"total":10}},{"uid":"450cf37eb16264784dc3a00ae66b0320","name":"test_films","statistic":{"failed":0,"broken":0,"skipped":0,"passed":21,"unknown":0,"total":21}}]}

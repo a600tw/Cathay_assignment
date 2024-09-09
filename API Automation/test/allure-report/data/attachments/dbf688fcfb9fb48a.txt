@@ -1,0 +1,2 @@
+Status: 405
+Response Body: {'detail': "Method 'DELETE' not allowed."}

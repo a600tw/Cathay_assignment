@@ -1,0 +1,1 @@
+{"name": "驗證不支援的MOTHOD得到 status code 為 405 與錯誤訊息", "status": "passed", "description": "驗證不支援的MOTHOD (PATCH) 會得到 status code 為 405 與錯誤訊息", "start": 1725899454556, "stop": 1725899455897, "uuid": "88a80a42-6768-449c-9cdf-164b3007f31d", "testCaseId": "60d0a3de0bee6acd1821542b97ac655d", "fullName": "test_films.TestCase_Films#test_unsupported_method"}
